@@ -550,6 +550,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gantt-chart-project-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gantt Chart — Project Timeline
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -699,6 +710,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gantt-chart-project-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gantt Chart — Project Timeline
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -737,6 +759,53 @@
 <h3 id="level-2-detailed-diagram">Level 2 — Detailed Diagram<a class="headerlink" href="#level-2-detailed-diagram" title="Permanent link">&para;</a></h3>
 <p>The Level 2 DFD provides a granular view of internal data flows within each subsystem, including the multi-agent decision pipeline.</p>
 <p><img alt="DFD Level 2" loading="lazy" src="../dfd%20diagrams/dfd_level2.png" width="100%" /></p>
+<hr />
+<h2 id="gantt-chart-project-timeline">Gantt Chart — Project Timeline<a class="headerlink" href="#gantt-chart-project-timeline" title="Permanent link">&para;</a></h2>
+<p>The Gantt chart shows the complete project timeline across all six phases, from research through final demo, with task dependencies and milestone markers.</p>
+<pre class="mermaid"><code>gantt
+    title Solar Sage AI — Project Timeline (UCS503P)
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %d
+
+    section Phase 1 - Research &amp; Proposal
+    Literature survey on drone-based solar cleaning   :a1, 2026-08-01, 18d
+    Problem statement definition                      :a2, 2026-08-05, 10d
+    Solution approach design                          :a3, after a2, 12d
+    Project proposal report (LaTeX)                   :a4, 2026-08-15, 16d
+    Proposal Submission                               :milestone, m1, 2026-08-31, 0d
+
+    section Phase 2 - System Design
+    Use case diagram                                  :b1, 2026-09-01, 10d
+    DFD Level 0, 1, 2                                 :b2, 2026-09-05, 12d
+    System architecture design                        :b3, 2026-09-10, 14d
+    Tech stack finalization (OpenCV, ESP32, Python)    :b4, 2026-09-08, 10d
+    GitHub Pages documentation site                   :b5, 2026-09-15, 15d
+
+    section Phase 3 - Core Development
+    CI/CD pipeline setup                              :c1, 2026-09-25, 12d
+    Drone image capture pipeline                      :c2, 2026-10-01, 15d
+    ESP32 servo &amp; pump actuation prototype            :c3, 2026-10-05, 20d
+    OpenCV panel segmentation &amp; dirt detection         :c4, 2026-10-10, 22d
+    Dirt scoring engine (0-100 heuristic)             :c5, 2026-10-20, 15d
+    Multi-agent decision layer                        :c6, 2026-10-15, 25d
+    Prototype Demo                                    :milestone, m2, 2026-11-10, 0d
+
+    section Phase 4 - Dashboard &amp; Integration
+    Web dashboard (per-panel metrics, efficiency, ROI):d1, 2026-11-01, 18d
+    End-to-end detect-and-clean loop integration      :d2, 2026-11-05, 20d
+    Containerized deployment                          :d3, 2026-11-20, 10d
+
+    section Phase 5 - Testing &amp; Validation
+    Water, electrical &amp; dust tests on test array      :e1, 2026-11-15, 15d
+    Baseline vs. automated cleaning comparison        :e2, 2026-11-20, 15d
+    Latency and accuracy benchmarking                 :e3, 2026-11-25, 15d
+    Bug fixes and optimization                        :e4, 2026-12-01, 12d
+
+    section Phase 6 - Final Report &amp; Demo
+    Final project report (LaTeX)                      :f1, 2026-12-01, 15d
+    Project demo preparation                          :f2, 2026-12-08, 10d
+    Documentation finalization                        :f3, 2026-12-10, 8d
+    Final Report Submission                           :milestone, m3, 2026-12-20, 0d</code></pre>
 
 
 
@@ -757,7 +826,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 14, 2026 16:28:09 UTC">September 14, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 14, 2026 17:04:23 UTC">September 14, 2026</span>
   </span>
 
     
