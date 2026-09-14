@@ -194,4 +194,4 @@ Found something? See [SECURITY.md](./SECURITY.md). Please do not open a public i
 
 MIT. Use it, fork it, ship it.
 
-Built by [Shaurya Punj](https://github.com/ShAuRyA-Noodle).
+
