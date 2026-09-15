@@ -3,7 +3,7 @@
 - **Name:** Omkar Shukla
 - **Roll No:** 1024030757
 - **Project Name:** Solar Sage AI
-- **Role:** Backend & AI Agents Developer
+- **Role:** Backend 
 
 ---
 
