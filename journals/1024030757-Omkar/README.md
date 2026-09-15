@@ -43,9 +43,9 @@
 
 ---
 
-## Week 5 (Aug 31 - Sep 6): Logging, Testing & Final Integration
+## Week 5 (Aug 31 - Sep 6): Explain-Chat feature, Testing & Final Integration
 
-- Added logging across the backend pipeline to track system performance and capture errors during processing.
-- Conducted end-to-end testing of the complete pipeline to verify correct functioning across different scenarios.
-- Tested edge cases and failure conditions to ensure the system handled errors gracefully.
-- Finalized backend refinements in preparation for the final project demonstration.
+Developed the explain endpoint, allowing users to get plain-English explanations of specific defect types identified in their reports.
+Built the chat endpoint, enabling users to ask open-ended follow-up questions grounded in their own inspection session data.
+Conducted end-to-end testing of the complete pipeline, including failure cases such as invalid photos and malformed AI responses.
+Finalized backend refinements and prepared the API layer for the final project demonstration.
