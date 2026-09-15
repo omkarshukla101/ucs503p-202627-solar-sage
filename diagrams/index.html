@@ -551,6 +551,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#activity-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity Diagram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gantt-chart-project-timeline" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -711,6 +722,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#activity-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity Diagram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gantt-chart-project-timeline" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -759,6 +781,33 @@
 <h3 id="level-2-detailed-diagram">Level 2 — Detailed Diagram<a class="headerlink" href="#level-2-detailed-diagram" title="Permanent link">&para;</a></h3>
 <p>The Level 2 DFD provides a granular view of internal data flows within each subsystem, including the multi-agent decision pipeline.</p>
 <p><img alt="DFD Level 2" loading="lazy" src="../dfd%20diagrams/dfd_level2.png" width="100%" /></p>
+<hr />
+<h2 id="activity-diagram">Activity Diagram<a class="headerlink" href="#activity-diagram" title="Permanent link">&para;</a></h2>
+<p>The activity diagram illustrates the complete operational workflow of Solar Sage AI—from autonomous drone image capture, OpenCV segmentation, and multi-agent AI dirt scoring, to conditional ESP32 actuation, metric logging, and panel looping.</p>
+<p><img alt="Activity Diagram" loading="lazy" src="../activity_diagram.png" width="100%" /></p>
+<pre class="mermaid"><code>graph TD
+    Start([Start]) --&gt; A[Drone captures RGB / Thermal imagery]
+    A --&gt; B[OpenCV segments imagery and detects dirt / debris regions]
+    B --&gt; C[AI Decision Layer scores dirt level 0-100 and ranks panel]
+    C --&gt; D{Dirt score crosses cleaning threshold?}
+
+    D -- No --&gt; E[Log panel as clean - no action taken]
+    D -- Yes --&gt; F{Confidence check: detection confidence high?}
+
+    F -- No --&gt; G[Suppress cleaning trigger - log low-confidence flag]
+    F -- Yes --&gt; H[ESP32 issues servo and pump control signals]
+
+    H --&gt; I[Targeted water application - cleaning executed]
+    I --&gt; J[Measure and validate cleaning effect]
+    J --&gt; K[Log efficiency gain and resource-use metrics]
+    K --&gt; L[Update dashboard: dirt score, efficiency gain, cost savings]
+
+    E --&gt; M{More panels remaining in field?}
+    G --&gt; M
+    L --&gt; M
+
+    M -- Yes --&gt; A
+    M -- No --&gt; End([End])</code></pre>
 <hr />
 <h2 id="gantt-chart-project-timeline">Gantt Chart — Project Timeline<a class="headerlink" href="#gantt-chart-project-timeline" title="Permanent link">&para;</a></h2>
 <p>The Gantt chart shows the complete project timeline across all six phases, from research through final demo, with task dependencies and milestone markers.</p>
@@ -826,7 +875,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 14, 2026 17:04:23 UTC">September 14, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 15, 2026 02:06:36 UTC">September 15, 2026</span>
   </span>
 
     
