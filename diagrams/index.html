@@ -562,17 +562,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#entity-relationship-er-diagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Entity-Relationship (ER) Diagram
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gantt-chart-project-timeline" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -744,17 +733,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#entity-relationship-er-diagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Entity-Relationship (ER) Diagram
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gantt-chart-project-timeline" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -830,125 +808,6 @@
 
     M -- Yes --&gt; A
     M -- No --&gt; End([End])</code></pre>
-<hr />
-<h2 id="entity-relationship-er-diagram">Entity-Relationship (ER) Diagram<a class="headerlink" href="#entity-relationship-er-diagram" title="Permanent link">&para;</a></h2>
-<p>The Entity-Relationship diagram outlines the database schema (Drizzle ORM) for Solar Sage AI, mapping relationships between Organizations, Users, Solar Sites, Physical Modules, Inspections, Image Uploads, Panel Analysis Results, Detected Defects, Executive Reports, and Audit Logs.</p>
-<pre class="mermaid"><code>erDiagram
-    ORGS ||--o{ MEMBERSHIPS : "has"
-    USERS ||--o{ MEMBERSHIPS : "belongs to"
-    ORGS ||--o{ SITES : "owns"
-    SITES ||--o{ STRINGS : "contains"
-    SITES ||--o{ MODULES : "contains"
-    STRINGS ||--o{ MODULES : "groups"
-
-    ORGS ||--o{ INSPECTIONS : "initiates"
-    SITES ||--o{ INSPECTIONS : "targets"
-    USERS ||--o{ INSPECTIONS : "created by"
-
-    INSPECTIONS ||--o{ INSPECTION_IMAGES : "includes"
-    INSPECTIONS ||--o{ PANEL_RESULTS : "generates"
-    INSPECTION_IMAGES ||--o{ PANEL_RESULTS : "provides"
-    MODULES ||--o{ PANEL_RESULTS : "maps to"
-
-    PANEL_RESULTS ||--o{ DEFECTS : "identifies"
-    INSPECTIONS ||--|| REPORTS : "synthesizes"
-
-    ORGS ||--o{ API_KEYS : "owns"
-    ORGS ||--o{ AUDIT_LOG : "audits"
-    USERS ||--o{ AUDIT_LOG : "audits"
-
-    ORGS {
-        string id PK
-        string slug UK
-        string name
-        string plan
-    }
-
-    USERS {
-        string id PK
-        string email UK
-        string name
-    }
-
-    MEMBERSHIPS {
-        string id PK
-        string user_id FK
-        string org_id FK
-        string role
-    }
-
-    SITES {
-        string id PK
-        string org_id FK
-        string name
-        float lat
-        float lon
-    }
-
-    MODULES {
-        string id PK
-        string site_id FK
-        string string_id FK
-        string serial_number
-        string model
-        int wattage_w
-    }
-
-    INSPECTIONS {
-        string id PK
-        string org_id FK
-        string site_id FK
-        string kind
-        string status
-        int panel_count
-    }
-
-    INSPECTION_IMAGES {
-        string id PK
-        string inspection_id FK
-        string sha256
-        string image_url
-        float lat
-        float lon
-    }
-
-    PANEL_RESULTS {
-        string id PK
-        string inspection_id FK
-        string image_id FK
-        string module_id FK
-        string panel_id_string
-        int condition_score
-        int cleanliness_score
-        float eff_loss_pct
-    }
-
-    DEFECTS {
-        string id PK
-        string panel_result_id FK
-        string type
-        string severity
-        float confidence
-        float eff_loss_pct
-    }
-
-    REPORTS {
-        string id PK
-        string inspection_id FK
-        string executive_summary
-        int fleet_health_score
-        float fleet_eff_loss_pct
-    }
-
-    AUDIT_LOG {
-        string id PK
-        string org_id FK
-        string user_id FK
-        string action
-        string target_type
-        string target_id
-    }</code></pre>
-<hr />
 <h2 id="gantt-chart-project-timeline">Gantt Chart — Project Timeline<a class="headerlink" href="#gantt-chart-project-timeline" title="Permanent link">&para;</a></h2>
 <p>The Gantt chart shows the complete project timeline across all six phases, from research through final demo, with task dependencies and milestone markers.</p>
 <pre class="mermaid"><code>gantt
@@ -1015,7 +874,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 13, 2026 03:39:36 UTC">October 13, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 13, 2026 03:46:52 UTC">October 13, 2026</span>
   </span>
 
     
