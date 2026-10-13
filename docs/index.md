@@ -428,7 +428,7 @@ Solar Sage AI is an autonomous **"Inspect-to-Clean"** system that uses drone ima
 ### Use Case Diagram
 
 <figure markdown>
-  ![Use Case Diagram](use_case_diagram.png){ width="100%" loading=lazy }
+  ![Use Case Diagram](solar_sage_use_case_diagram.png){ width="100%" loading=lazy }
   <figcaption>Solar Sage AI — Use Case Diagram showing actor interactions and system boundaries</figcaption>
 </figure>
 
