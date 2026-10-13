@@ -68,6 +68,16 @@ graph TD
     M -- No --> End([End])
 ```
 
+---
+
+## Entity-Relationship (ER) Diagram
+
+The Entity-Relationship (ER) diagram models the core entities, attributes, and relational mappings for the Solar Sage AI system—capturing the operational pipeline across Operators, Drones, Scan Missions, Solar Panel Arrays, Dirt Detection events, Cleaning Actions, and Metric Logging.
+
+![Entity-Relationship (ER) Diagram](solar_sage_er_diagram_upscaled.png){ width="100%" loading=lazy }
+
+---
+
 ## Gantt Chart — Project Timeline
 
 The Gantt chart shows the complete project timeline across all six phases, from research through final demo, with task dependencies and milestone markers.
