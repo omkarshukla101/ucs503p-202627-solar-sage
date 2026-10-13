@@ -42,32 +42,6 @@ The activity diagram illustrates the complete operational workflow of Solar Sage
 
 ![Activity Diagram](solar_sage_activity_diagram.png){ width="100%" loading=lazy }
 
-```mermaid
-graph TD
-    Start([Start]) --> A[Drone captures RGB / Thermal imagery]
-    A --> B[OpenCV segments imagery and detects dirt / debris regions]
-    B --> C[AI Decision Layer scores dirt level 0-100 and ranks panel]
-    C --> D{Dirt score crosses cleaning threshold?}
-    
-    D -- No --> E[Log panel as clean - no action taken]
-    D -- Yes --> F{Confidence check: detection confidence high?}
-    
-    F -- No --> G[Suppress cleaning trigger - log low-confidence flag]
-    F -- Yes --> H[ESP32 issues servo and pump control signals]
-    
-    H --> I[Targeted water application - cleaning executed]
-    I --> J[Measure and validate cleaning effect]
-    J --> K[Log efficiency gain and resource-use metrics]
-    K --> L[Update dashboard: dirt score, efficiency gain, cost savings]
-    
-    E --> M{More panels remaining in field?}
-    G --> M
-    L --> M
-    
-    M -- Yes --> A
-    M -- No --> End([End])
-```
-
 ---
 
 ## Entity-Relationship (ER) Diagram
